@@ -42,7 +42,7 @@ function Header() {
     <header className="modern-header">
       <div className="header-container">
         <div className="logo-section">
-          <img src="./public/imagenes/LogoAMZsinFondo.png" alt="Logo AMZ" className="logo-img" />
+          <img src="../img-logo/LogoAMZsinFondo.png" alt="Logo AMZ" className="logo-img" />
         </div>
         
         <nav className="nav-menu">
