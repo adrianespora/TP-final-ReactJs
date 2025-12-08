@@ -4,7 +4,7 @@ import { useCarrito } from '../contexts/CarritoContext';
 import { useAuth } from '../contexts/AuthContext';
 import { toast } from 'react-toastify';
 import "./Header.css";
-import logo from './img-logo/LogoAMZsinFondo.png'; // Ruta relativa desde el componente
+import logo from '../img-logo/LogoAMZsinFondo.png';
 
 
 function Header() {
