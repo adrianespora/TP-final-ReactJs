@@ -1,0 +1,316 @@
+# 🛒 AMZ Store - E-commerce de Tecnología
+
+Proyecto final de e-commerce desarrollado con React, implementando un sistema completo de gestión de productos, carrito de compras y autenticación de usuarios.
+
+---
+
+## 📋 Descripción
+
+AMZ Store es una aplicación web de comercio electrónico especializada en productos tecnológicos. Permite a los usuarios navegar por un catálogo de productos, agregar artículos al carrito de compras, y gestionar productos mediante un panel de administración protegido.
+
+---
+
+## 🚀 Tecnologías Utilizadas
+
+### Frontend
+- **React 18** - Biblioteca principal
+- **React Router DOM** - Enrutamiento y navegación
+- **Context API** - Gestión de estado global
+- **React Toastify** - Notificaciones
+- **React Helmet Async** - SEO dinámico
+
+### Backend/API
+- **MockAPI** - API REST para CRUD de productos
+
+### Herramientas
+- **Vite** - Build tool y desarrollo
+- **pnpm** - Gestor de paquetes
+
+---
+
+## ✨ Funcionalidades Principales
+
+### 🏠 Públicas
+- ✅ Página de inicio con Hero section
+- ✅ Catálogo de productos con imágenes y precios
+- ✅ Búsqueda de productos por nombre
+- ✅ Paginación (10 productos por página)
+- ✅ Página de detalle de cada producto
+- ✅ Selector de cantidad (1-10 unidades)
+- ✅ Sección de reseñas
+- ✅ Formulario de contacto
+- ✅ Mapa de ubicación
+
+### 🔐 Autenticación
+- ✅ Sistema de login (simulado)
+- ✅ Persistencia con localStorage
+- ✅ Rutas protegidas (requieren autenticación)
+- ✅ Botón de logout con notificación
+
+### 🛒 Carrito de Compras
+- ✅ Agregar productos al carrito
+- ✅ Ver lista de productos en el carrito
+- ✅ Eliminar productos individuales
+- ✅ Vaciar carrito completo
+- ✅ Cálculo automático del total
+- ✅ Finalizar compra
+- ✅ Badge con cantidad de productos
+- ✅ Solo accesible para usuarios autenticados
+
+### ⚙️ Panel de Administración
+- ✅ **Crear** nuevos productos
+- ✅ **Leer** lista completa de productos
+- ✅ **Actualizar** productos existentes
+- ✅ **Eliminar** productos (con modal de confirmación)
+- ✅ Validaciones de formulario
+- ✅ Manejo de errores
+- ✅ Solo accesible para usuarios autenticados
+
+### 🎨 UX/UI
+- ✅ Diseño moderno y responsive
+- ✅ Notificaciones toast para todas las acciones
+- ✅ Loader durante cargas
+- ✅ Manejo de estados de error
+- ✅ Breadcrumbs para navegación
+- ✅ Scroll suave entre secciones
+- ✅ Formato de precios argentino ($1.250.000,00)
+
+### 🔍 SEO
+- ✅ Meta tags dinámicos con React Helmet
+- ✅ Títulos personalizados por página
+- ✅ Descripciones optimizadas
+
+---
+
+## 📦 Instalación
+
+### Prerequisitos
+- Node.js (v16 o superior)
+- pnpm (o npm/yarn)
+
+### Pasos
+
+1. **Clonar el repositorio**
+```bash
+git clone <URL_DEL_REPOSITORIO>
+cd amz-store
+```
+
+2. **Instalar dependencias**
+```bash
+pnpm install
+```
+
+3. **Iniciar servidor de desarrollo**
+```bash
+pnpm run dev
+```
+
+4. **Abrir en el navegador**
+```
+http://localhost:5173
+```
+
+---
+
+## 🎯 Uso de la Aplicación
+
+### Como Usuario
+
+1. **Navegar por productos**
+   - La página principal muestra productos destacados
+   - Usa la barra de búsqueda para filtrar
+   - Navega entre páginas con el paginador
+
+2. **Ver detalle de producto**
+   - Click en "Más info" para ver especificaciones completas
+   - Selecciona cantidad deseada
+   - Agrega al carrito o compra directamente
+
+3. **Iniciar sesión**
+   - Click en "Login" en el header
+   - Ingresa cualquier email y contraseña (simulado)
+   - Serás redirigido a la página principal
+
+4. **Gestionar carrito**
+   - Click en el ícono del carrito (requiere login)
+   - Revisa tus productos
+   - Elimina items individuales o vacía el carrito
+   - Finaliza la compra
+
+### Como Administrador
+
+1. **Acceder al panel de admin**
+   - Inicia sesión
+   - Click en "Admin" en el header
+   - Solo visible para usuarios autenticados
+
+2. **Agregar producto**
+   - Click en "Agregar Nuevo Producto"
+   - Completa todos los campos:
+     - Nombre
+     - Precio
+     - Descripción
+     - URL de imagen
+     - Categoría
+   - Click en "Agregar"
+
+3. **Editar producto**
+   - Click en "Editar" en la tabla
+   - Modifica los campos necesarios
+   - Click en "Actualizar"
+
+4. **Eliminar producto**
+   - Click en "Eliminar" en la tabla
+   - Confirma en el modal
+   - El producto será eliminado permanentemente
+
+---
+
+## 🗂️ Estructura del Proyecto
+
+```
+src/
+├── components/
+│   ├── AdminProductos.jsx    # CRUD de productos
+│   ├── Carrito.jsx           # Página del carrito
+│   ├── Contacto.jsx          # Formulario de contacto
+│   ├── Footer.css            # Estilos de Footer
+│   ├── Footer.jsx            # Pie de página
+│   ├── Header.css            # Estilos de Header
+│   ├── Header.jsx            # Navegación principal
+│   ├── Inicio.css            # Estilo de Inicio
+│   ├── Inicio.jsx            # Hero section
+│   ├── Login.jsx             # Página de login
+│   ├── Mapa.jsx              # Mapa de ubicación
+│   ├── PrivateRoute.jsx      # HOC para rutas protegidas
+│   ├── ProductDetail.jsx     # Detalle de producto
+│   ├── ProductDetail.css     # Estilos del detalle
+│   ├── Productos.jsx         # Catálogo con búsqueda/paginación
+│   └── Reseñas.jsx           # Sección de reseñas
+│
+├── contexts/
+│   ├── AuthContext.jsx       # Context de autenticación
+│   └── CarritoContext.jsx    # Context del carrito
+│
+├── App.jsx                   # Componente principal con rutas
+├── main.jsx                  # Punto de entrada
+└── index.css                 # Estilos globales
+```
+
+---
+
+## 🔗 API
+
+**Endpoint de MockAPI:**
+```
+https://6936aff6f8dc350aff31ca82.mockapi.io/tecnology
+```
+
+### Estructura de Producto
+```json
+{
+  "id": "1",
+  "nombre": "iPhone 15 Pro",
+  "precio": 999,
+  "descripcion": "Smartphone Apple con chip A17 Pro",
+  "imagen": "https://...",
+  "categoria": "Smartphones"
+}
+```
+
+---
+
+## 📱 Rutas de la Aplicación
+
+| Ruta | Descripción | Protegida |
+|------|-------------|-----------|
+| `/` | Página principal | No |
+| `/login` | Iniciar sesión | No |
+| `/producto/:id` | Detalle de producto | No |
+| `/carrito` | Carrito de compras | ✅ Sí |
+| `/admin` | Panel de administración | ✅ Sí |
+
+---
+
+## 🎨 Características de Diseño
+
+- **Responsive Design**: Funciona en móviles, tablets y desktop
+- **Gradientes modernos**: Colores vibrantes (#667eea, #764ba2)
+- **Animaciones suaves**: Transiciones en hover y clicks
+- **Glassmorphism**: Efectos de vidrio esmerilado
+- **Dark mode ready**: Base preparada para tema oscuro
+
+---
+
+## 🐛 Solución de Problemas
+
+### El carrito no muestra productos
+- Asegúrate de haber iniciado sesión
+- El carrito solo es accesible para usuarios autenticados
+
+### No puedo agregar productos en Admin
+- Verifica que todos los campos estén completos
+- El precio debe ser un número mayor a 0
+- La URL de imagen debe comenzar con http:// o https://
+
+### Los productos no cargan
+- Verifica tu conexión a internet
+- MockAPI debe estar accesible
+- Revisa la consola del navegador para errores
+
+---
+
+## 📄 Scripts Disponibles
+
+```bash
+# Desarrollo
+pnpm run dev
+
+# Build para producción
+pnpm run build
+
+# Preview de producción
+pnpm run preview
+```
+
+---
+
+## 🚀 Próximas Mejoras (Opcional)
+
+- [ ] Integración con pasarela de pago real
+- [ ] Sistema de favoritos
+- [ ] Comparador de productos
+- [ ] Filtros avanzados (por categoría, precio, etc.)
+- [ ] Historial de compras
+- [ ] Modo oscuro
+- [ ] Multi-idioma (i18n)
+- [ ] Sistema de reviews con puntuación
+
+---
+
+## 👨‍💻 Autor
+
+**Adrian Marcelo Ziegler*
+- Email: adrianespora@gmail.com
+- GitHub: adrianespora
+
+---
+
+## 📝 Licencia
+
+Este proyecto fue desarrollado como trabajo práctico final para ReactJs.
+
+---
+
+## 🙏 Agradecimientos
+
+- Diseño inspirado en plataformas modernas de e-commerce
+- Imágenes de productos de MockAPI
+- Iconos emoji nativos del navegador
+
+---
+
+**Fecha de entrega:** 12 de diciembre de 2025
+
+**Versión:** 1.0.0
