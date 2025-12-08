@@ -4,6 +4,8 @@ import { useCarrito } from '../contexts/CarritoContext';
 import { useAuth } from '../contexts/AuthContext';
 import { toast } from 'react-toastify';
 import "./Header.css";
+import logo from './img-logo/LogoAMZsinFondo.png'; // Ruta relativa desde el componente
+
 
 function Header() {
   const navigate = useNavigate();
@@ -42,7 +44,7 @@ function Header() {
     <header className="modern-header">
       <div className="header-container">
         <div className="logo-section">
-          <img src="../img-logo/LogoAMZsinFondo.png" alt="Logo AMZ" className="logo-img" />
+          <img src={logo} alt="Logo AMZ" className="logo-img" />
         </div>
         
         <nav className="nav-menu">
