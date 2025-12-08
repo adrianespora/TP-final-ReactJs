@@ -4,6 +4,9 @@ import { useCarrito } from '../contexts/CarritoContext';
 import { useAuth } from '../contexts/AuthContext';
 import { toast } from 'react-toastify';
 import "./Header.css";
+// Debes subir un nivel (../) y luego entrar a img-logo
+import logo from '../img-logo/LogoAMZsinFondo.png';
+
 
 function Header() {
   const navigate = useNavigate();
@@ -42,7 +45,7 @@ function Header() {
     <header className="modern-header">
       <div className="header-container">
         <div className="logo-section">
-          <img src="./public/imagenes/LogoAMZsinFondo.png" alt="Logo AMZ" className="logo-img" />
+          <img src={logo} alt="Logo AMZ" className="logo-img" />
         </div>
         
         <nav className="nav-menu">
