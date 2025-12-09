@@ -43,7 +43,7 @@ function Header() {
       <div className="header-container">
          <div className="logo-section">
           {/* RUTA ABSOLUTA desde la carpeta public */}
-          <img src="https://imgur.com/a/98qUwy0 alt="Logo AMZ" className="logo-img" />
+          <img src="https://cqk1aw6ivxjdg03b.public.blob.vercel-storage.com/LogoAMZsinfondo.png" alt="Logo AMZ" className="logo-img" />
         </div>
         
         <nav className="nav-menu">
